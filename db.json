@@ -31,7 +31,11 @@
   "theme": {
     "colors": {
       "primary": "#f44336",
+      "primaryDark": "#aa2e25",
+      "primaryLight": "#f6685e",
       "secondary": "#ff9100",
+      "secondaryDark": "#b26500",
+      "secondaryLight": "#ffa733",
       "mainBg": "rgba(48, 32, 33, 0.9)",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
