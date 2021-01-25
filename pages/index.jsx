@@ -5,7 +5,7 @@ import Footer from '../src/components/Footer';
 import QuizBackground from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
-
+import Form from '../src/components/Form';
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -19,8 +19,8 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home () {
-  // const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
-  const randomBg = `/bgs/2.png`;
+  const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
+  // const randomBg = `/bgs/2.png`;
 
   return (
     <QuizBackground backgroundImage={randomBg} >
@@ -33,6 +33,7 @@ export default function Home () {
           <Widget.Content>
             <h1>Quiz dos Caçadores</h1>
             <p>Meow!</p>
+            <Form />
           </Widget.Content>
         </Widget>
         <Widget>
