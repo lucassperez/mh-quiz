@@ -19,7 +19,8 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home () {
-  const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
+  // const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
+  const randomBg = `/bgs/2.png`;
 
   return (
     <QuizBackground backgroundImage={randomBg} >
