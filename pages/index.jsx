@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 // import db from '../db.json';
+import { bgUrls } from '../public/bgs/urls';
 import { Widget } from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import QuizBackground from '../src/components/QuizBackground';
@@ -19,8 +20,8 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home () {
-  const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
-  // const randomBg = `/bgs/2.png`;
+  // const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
+  const randomBg = bgUrls[Math.ceil(Math.random() * 10)];
 
   return (
     <QuizBackground backgroundImage={randomBg} >
