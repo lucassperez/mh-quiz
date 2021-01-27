@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import db from '../../../db.json';
 // import Textbox from '../Textbox';
@@ -7,13 +8,11 @@ import db from '../../../db.json';
 function Form () {
   const [aviso, setAviso] = useState(false);
   const [input, setInput] = useState('');
+  const router = useRouter();
 
   function handleSubmit (e) {
     e.preventDefault();
-    if (!e.target.firstChild.value)
-      setAviso(true);
-    else
-      e.target.firstChild.value = '';
+    router.push(`/quiz?name=${input}`);
   }
 
   return (
@@ -26,6 +25,7 @@ function Form () {
         onChange={e => setInput(e.target.value)}
       />
       <InputSubmit
+        disabled={!input}
         type="submit"
         value="Jogar!"
       />
@@ -69,5 +69,9 @@ const InputSubmit = styled.input`
     color: #555;
   }
   &:focus { outline: none; }
+  &:disabled {
+    background-color: #555;
+    color: black;
+  }
 `;
 
