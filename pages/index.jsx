@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components'
-// import db from '../db.json';
 import Footer from '../src/components/Footer';
+import QuizBackground from '../src/components/QuizBackground';
 import { Widget } from '../src/components/Widget';
 import { QuizContainer } from '../src/components/QuizContainer';
-import QuizBackground from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
 import Form from '../src/components/Form';
@@ -28,9 +27,9 @@ export default function Home () {
         </Widget>
         <Widget>
           <Widget.Content>
-              <h1>Quem aqui gosta de Monster Hunter?</h1>
-              <p>Eu gosto!</p>
-            </Widget.Content>
+            <h1>Quem aqui gosta de Monster Hunter?</h1>
+            <p>Eu gosto!</p>
+          </Widget.Content>
         </Widget>
         <Footer />
       </QuizContainer>
