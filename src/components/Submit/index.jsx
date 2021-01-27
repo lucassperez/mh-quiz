@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import db from '../../../db.json';
 
 function Submit ({ value, disabled }) {
@@ -41,4 +42,9 @@ const SubmitBase = styled.input`
     cursor: default;
   }
 `;
+
+Submit.propTypes = {
+  value: PropTypes.string.isRequired,
+  disable: PropTypes.bool,
+}
 

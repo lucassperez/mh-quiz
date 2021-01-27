@@ -21,7 +21,7 @@ function Quiz () {
           <Widget.Header>
             É hora do Quiz!&nbsp;&nbsp;&nbsp;<b>{i+1}/10</b>
           </Widget.Header>
-          <div class="imagem">
+          <div className="imagem">
             <img src={`/gifs/${i+1}.gif`}/>
           </div>
           <Widget.Content>

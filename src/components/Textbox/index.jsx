@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import db from '../../../db.json';
 
 function Input ({ placeholder, input, setInput }) {
@@ -27,4 +28,10 @@ const InputBase = styled.input`
   &:focus {
     outline: none;
 `;
+
+Input.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  input: PropTypes.string.isRequired,
+  setInput: PropTypes.func.isRequired,
+};
 
