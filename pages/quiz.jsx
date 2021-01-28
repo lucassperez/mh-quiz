@@ -7,6 +7,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
 import LoadingGif from '../src/components/LoadingGif';
 import Question from '../src/components/Question';
+import next from 'next';
 
 const screenStates = {
   LOADING: 'loading',
@@ -14,10 +15,9 @@ const screenStates = {
   RESULT: 'result'
 }
 
-function Quiz () {
+function Quiz ({ randomBg }) {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
   // const playerName = typeof window !== 'undefined'
   //   && window.location.href.split('name=').pop();
 
@@ -42,7 +42,7 @@ function Quiz () {
   }, [screenState]);
 
   return (
-    <QuizBackground backgroundImage={randomBg}>
+    <QuizBackground backgroundImage={randomBg.current}>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.LOADING && <LoadingGif />}

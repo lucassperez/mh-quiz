@@ -7,11 +7,10 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
 import Form from '../src/components/Form';
 
-export default function Home () {
-  const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
+export default function Home ({ randomBg }) {
 
   return (
-    <QuizBackground backgroundImage={randomBg}>
+    <QuizBackground backgroundImage={randomBg.current}>
       <QuizContainer>
         <QuizLogo />
         <Widget>

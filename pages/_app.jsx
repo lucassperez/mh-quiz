@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 import db from '../db.json';
@@ -37,6 +37,8 @@ const theme = db.theme;
 
 {/* eslint-disable-next-line react/jsx-props-no-spreading */}
 export default function App({ Component, pageProps }) {
+  const randomBg = useRef(`/bgs/${Math.ceil(Math.random() * 10)}.png`);
+
   return (
     <>
       <Head>
@@ -62,7 +64,7 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
+        <Component {...pageProps} randomBg={randomBg} />
       </ThemeProvider>
     </>
   );
