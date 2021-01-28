@@ -1,74 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import db from '../db.json';
 import Footer from '../src/components/Footer';
 import QuizBackground from '../src/components/QuizBackground';
-import { Widget } from '../src/components/Widget';
 import { QuizContainer } from '../src/components/QuizContainer/quiz';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
-import Submit from '../src/components/Submit';
+import LoadingGif from '../src/components/LoadingGif';
+import Question from '../src/components/Question';
 
-import PropTypes from 'prop-types';
-function Question ({ question, questionIndex, total }) {
-  const questionId = `question_${questionIndex}`;
-
-  return (
-    <Widget>
-      <Widget.Header>
-        Pergunta Número&nbsp;<b>{questionIndex+1}</b>&nbsp;de&nbsp;<b>{total}</b>
-      </Widget.Header>
-      <div className="imagem">
-        <img src={question.image} />
-      </div>
-      <Widget.Content>
-        <h1>{question.title}</h1>
-        <p>{question.description}</p>
-        <form>
-          {question.alternatives.map((opção, i) => {
-            const idOpção = `opção_${i}`;
-
-            return (
-              <Widget.Topic key={idOpção} as="label" htmlFor={idOpção}>
-                <input
-                  style={{ display: 'none' }}
-                  name={questionId}
-                  type="radio"
-                  id={idOpção}
-                />
-                {opção}
-              </Widget.Topic>
-            );
-          })}
-        </form>
-      </Widget.Content>
-      <Submit value="Responder!" />
-    </Widget>
-  );
+const screenStates = {
+  LOADING: 'loading',
+  QUIZ: 'quiz',
+  RESULT: 'result'
 }
 
-Question.propTypes = {
-  question: PropTypes.object.isRequired,
-  questionIndex: PropTypes.number.isRequired,
-  total: PropTypes.number.isRequired
-};
-
 function Quiz () {
+  const [screenState, setScreenState] = useState(screenStates.LOADING);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const randomBg = `/bgs/${Math.ceil(Math.random() * 10)}.png`;
-  const playerName = typeof window !== "undefined"
-    && window.location.href.split('name=').pop();
+  // const playerName = typeof window !== 'undefined'
+  //   && window.location.href.split('name=').pop();
+
+  const totalQuestions = db.questions.length;
+  const questionIndex = currentQuestion;
+  const question = db.questions[questionIndex];
+
+  const handleSubmitQuiz = () => {
+    const nextQuestion = questionIndex + 1;
+    if (nextQuestion >= totalQuestions)
+      setScreenState(screenStates.RESULT);
+    else
+      setCurrentQuestion(nextQuestion);
+  }
+
+  useEffect(() => {
+    if (screenState !== screenStates.RESULT) {
+      setTimeout(() => {
+        setScreenState(screenStates.QUIZ);
+      }, 1000);
+    }
+  }, [screenState]);
 
   return (
     <QuizBackground backgroundImage={randomBg}>
       <QuizContainer>
         <QuizLogo />
-        {db.questions.map((question, index) => (
+        {screenState === screenStates.LOADING && <LoadingGif />}
+
+        {screenState === screenStates.QUIZ && (
           <Question
-            key={index}
             question={question}
-            questionIndex={index}
-            total={db.questions.length}
+            questionIndex={questionIndex}
+            total={totalQuestions}
+            onSubmit={handleSubmitQuiz}
           />
-        ))}
+        )}
+
+        {screenState === screenStates.RESULT && <h1>Acabou</h1>}
         <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/lucassperez/mh-quiz" />

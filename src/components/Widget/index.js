@@ -4,7 +4,7 @@ export const Widget = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.mainBg };
+  background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: 4px;
   overflow: hidden;
 
@@ -24,9 +24,9 @@ export const Widget = styled.div`
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
-  & > *:first-child { margin-top: 0 }
+  & > *:first-child { margin-top: 0; }
 
-  & > *:last-child { margin-bottom: 0 }
+  & > *:last-child { margin-bottom: 0; }
 
   ul {
     list-style: none;
@@ -42,19 +42,18 @@ Widget.Header = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-// background-color: ${({ theme }) => `${theme.colors.primaryDark}` };
-Widget.Topic = styled.span`
+Widget.Topic = styled.a`
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => `${theme.colors.contrastText}` };
-  background-color: ${({ theme }) => `${theme.colors.primaryDark}` };
+  background-color: ${({ theme }) => `${theme.colors.primaryDark}`};
   padding: 10px 15px;
   margin-bottom: 8px;
   cursor: pointer;
-  border-radius: ${({ theme }) => theme.borderRadius };
+  border-radius: ${({ theme }) => theme.borderRadius};
   transition: .3s;
   display: block;
-  &:hover, &:focus { opacity: .5; };
+  &:hover, &:focus { background-color: ${({ theme }) => `${theme.colors.secondary}`}; }
   &:active { background-color: ${({ theme }) => `${theme.colors.secondaryDark}`}; }
 `;
 

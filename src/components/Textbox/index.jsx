@@ -26,6 +26,7 @@ const InputBase = styled.input`
   width: 100%;
   &:focus {
     outline: none;
+  }
 `;
 
 Input.propTypes = {

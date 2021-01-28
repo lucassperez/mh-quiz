@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components'
 import Footer from '../src/components/Footer';
 import QuizBackground from '../src/components/QuizBackground';
 import { Widget } from '../src/components/Widget';
