@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import db from '../../../db.json';
 
 function Input ({ placeholder, input, setInput }) {
-
   return (
     <InputBase
       type="text"

@@ -42,3 +42,19 @@ Widget.Header = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
+// background-color: ${({ theme }) => `${theme.colors.primaryDark}` };
+Widget.Topic = styled.span`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => `${theme.colors.contrastText}` };
+  background-color: ${({ theme }) => `${theme.colors.primaryDark}` };
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius };
+  transition: .3s;
+  display: block;
+  &:hover, &:focus { opacity: .5; };
+  &:active { background-color: ${({ theme }) => `${theme.colors.secondaryDark}`}; }
+`;
+

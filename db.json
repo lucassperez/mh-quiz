@@ -4,20 +4,20 @@
   "description": "Teste os seus conhecimentos sobre Monster Hunter e vamos ver quantos monstros você já caçou!",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "No primeiro jogo da série, lançado em 2004, haviam quantas opções de tipos diferentes de armas para escolher?",
-      "description": "Essa é pra aquecer",
+      "image": "/gifs/1.gif",
+      "title": "No primeiro jogo da série, lançado em 2004, quantos tipos diferentes de armas estavam disponíveis pro jogador?",
+      "description": "Essa é pra aquecer!",
       "answer": 4,
       "alternatives": [
-        "14",
-        "10",
-        "15",
-        "7",
-        "5"
+        "14 armas diferentes!",
+        "10 no total, dava pra contar nos dedos.",
+        "15 tipos diferentes!",
+        "7, apenas.",
+        "5, dava pra contar nos dedos de uma mão!"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "image": "/gifs/2.gif",
       "title": "Em qual das plataformas a seguir não é possível jogar Monster Hunter World?",
       "description": "Considere um computador gamer, e não o meu!",
       "answer": 1,

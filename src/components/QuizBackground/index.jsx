@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const QuizBackground = styled.div`
-  width: 100%;
   background-size: cover;
   background-position: center;
   background-image: url(${({ backgroundImage }) => backgroundImage});
@@ -18,7 +17,7 @@ const QuizBackground = styled.div`
         url(${({ backgroundImage }) => backgroundImage});
       display: block;
       width: 100%;
-      height: 100%;
+      height: 210px;
       position: absolute;
       top: 0;
       left: 0;
@@ -33,3 +32,4 @@ const QuizBackground = styled.div`
 `;
 
 export default QuizBackground;
+
